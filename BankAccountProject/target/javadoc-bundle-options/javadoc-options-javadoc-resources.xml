@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<javadocOptions>
+  <groups>
+    <group>
+      <title>控制器层</title>
+      <packages>com.Hackason.BankAccountProject.controller*</packages>
+    </group>
+    <group>
+      <title>服务层</title>
+      <packages>com.Hackason.BankAccountProject.service*</packages>
+    </group>
+    <group>
+      <title>数据访问层</title>
+      <packages>com.Hackason.BankAccountProject.mapper*</packages>
+    </group>
+    <group>
+      <title>实体类</title>
+      <packages>com.Hackason.BankAccountProject.entity*</packages>
+    </group>
+    <group>
+      <title>数据传输对象</title>
+      <packages>com.Hackason.BankAccountProject.dto*</packages>
+    </group>
+    <group>
+      <title>通用工具</title>
+      <packages>com.Hackason.BankAccountProject.common*</packages>
+    </group>
+  </groups>
+  <docletArtifacts>
+    <docletArtifact />
+  </docletArtifacts>
+  <tagletArtifacts>
+    <tagletArtifact />
+  </tagletArtifacts>
+  <excludePackageNames>
+    <excludePackageName>*.config.*</excludePackageName>
+    <excludePackageName>*.test.*</excludePackageName>
+  </excludePackageNames>
+  <javadocResourcesDirectory>src/main/javadoc</javadocResourcesDirectory>
+</javadocOptions>

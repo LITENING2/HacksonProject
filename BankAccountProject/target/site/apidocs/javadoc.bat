@@ -1,0 +1,1 @@
+cmd.exe /X /C "F:\bin\javadoc.exe -J-Duser.language=zh -J-Duser.country=CN @options @packages"

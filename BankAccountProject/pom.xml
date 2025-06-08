@@ -105,4 +105,115 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Spring Boot Maven Plugin -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                    <encoding>UTF-8</encoding>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>${lombok-mapstruct-binding.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Javadoc Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.6.3</version>
+                <configuration>
+                    <source>17</source>
+                    <encoding>UTF-8</encoding>
+                    <charset>UTF-8</charset>
+                    <docencoding>UTF-8</docencoding>
+                    <locale>zh_CN</locale>
+                    <windowTitle>银行账户管理系统 API 文档</windowTitle>
+                    <doctitle>银行账户管理系统 API 文档</doctitle>
+                    <header>银行账户管理系统</header>
+                    <footer>Hackason Team</footer>
+                    <bottom>Copyright © 2024 Hackason Team. All rights reserved.</bottom>
+                    <show>private</show>
+                    <nohelp>true</nohelp>
+                    <failOnError>false</failOnError>
+                    <failOnWarnings>false</failOnWarnings>
+                    <additionalJOptions>
+                        <additionalJOption>-J-Duser.language=zh</additionalJOption>
+                        <additionalJOption>-J-Duser.country=CN</additionalJOption>
+                    </additionalJOptions>
+                    <excludePackageNames>
+                        *.config.*:*.test.*
+                    </excludePackageNames>
+                    <groups>
+                        <group>
+                            <title>控制器层</title>
+                            <packages>com.Hackason.BankAccountProject.controller*</packages>
+                        </group>
+                        <group>
+                            <title>服务层</title>
+                            <packages>com.Hackason.BankAccountProject.service*</packages>
+                        </group>
+                        <group>
+                            <title>数据访问层</title>
+                            <packages>com.Hackason.BankAccountProject.mapper*</packages>
+                        </group>
+                        <group>
+                            <title>实体类</title>
+                            <packages>com.Hackason.BankAccountProject.entity*</packages>
+                        </group>
+                        <group>
+                            <title>数据传输对象</title>
+                            <packages>com.Hackason.BankAccountProject.dto*</packages>
+                        </group>
+                        <group>
+                            <title>通用工具</title>
+                            <packages>com.Hackason.BankAccountProject.common*</packages>
+                        </group>
+                    </groups>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
